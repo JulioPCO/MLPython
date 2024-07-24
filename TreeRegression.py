@@ -68,6 +68,25 @@ if ordinal_encoder:
 # criterion{“gini”, “entropy”, “log_loss”} for classification
 # criterion {'absolute_error', 'squared_error', 'poisson', 'friedman_mse'} for regression
 
+# More generally, ensemble models can be applied to any base learner beyond trees, in averaging methods such as Bagging methods, model stacking, or Voting, or in boosting, as AdaBoost.
+
+# gradient boosting tree: basically update the y values by using a weak learner and a step parameter in which
+# y = Fm(xi) --> Fm(x) = Fm-1(xi) + alfa*weaklearn(x), F1 = F0 +  alfa*weaklearn(x), Fo for mse is the average of y
+
+# adaboosting -> attribute initially equal weight for every label, and use a weak learner to predict the labels. If the predictor gets the label correct, 
+# the associated weight to that label decreases, otherwise the weight increase.
+
+# aggregating bootstrap/bagging tree: Full trees classified using bootstrap over data to reduce variance of the model
+
+
+# Random forrest: Create many trees using aggregating bootstrap/bagging tree with only a small but consistent number of unique features considered 
+# and to predict use metric to get the average result for the n tree created.
+# example: Averages the label/output of 20 trees for a certain features. 
+  
+    
+# Tree algorithms: ID3, C4.5, C5.0 and CART
+
+# https://scikit-learn.org/stable/modules/tree.html#tree
 # Differents settings 
 # https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier
 
